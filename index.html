@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Route</title>
-    <link rel="stylesheet" href="">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 </head>
-<body>
-    <h1>Cargando...</h1>
-</body>
+<body ng-app="RouteBryan">
+
+<p><a href="#/!">Inicio</a></p>
+
+<a href="#!red">Rojo</a>
+<a href="#!green">Verde</a>
+<a href="#!blue">Azul</a>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("RouteBryan", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "inicio.htm"
+    })
+    .when("/red", {
+        templateUrl : "rojo.htm"
+    })
+    .when("/green", {
+        templateUrl : "verde.htm"
+    })
+    .when("/blue", {
+        templateUrl : "azul.htm"
+    });
+});
+</script>
+
+<p>Cargando...</p>
+    </body>
 </html>
