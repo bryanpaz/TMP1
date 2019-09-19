@@ -2,39 +2,74 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Route</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <title>Vane</title>
 </head>
-<body ng-app="RouteBryan">
+<body>
+    <?php
 
-<p><a href="#/!">Inicio</a></p>
 
-<a href="#!red">Rojo</a>
-<a href="#!green">Verde</a>
-<a href="#!blue">Azul</a>
+$productos=array(
+   
+    "chocorramo"=>[
+     "nombre_producto"=>"Chocorramo",
+     "descripcion"=>[
+            "empresa"=>[
+                    "ramo"=>[
+                        "direccion"=>"carrera 30 sur 56 y 2",
+                        "oficina"=>"313",
+                        "director"=>"Rafael pardo",
+                        "fecha_fundacion"=>"26 agosto 1980"
+                    ] /*end ramo*/
+                        ] /*end empresa*/ ,
+                "tabla_nutricional"=>[
+                "carbohidratos"=>[
+                    "carbohidratos"=>"37g",
+                    "fibra_dietetica"=>"3g",
+                    "azucar"=>"22g"
+                ] /*end carbohidratos */ ,
+                "grasas"=>[
+                    "grasas"=>"16g",
+                    "saturadas"=>"11g",
+                    "Poliinsaturados"=>"1g",
+                    "Monoinsaturados"=>"3g",
+                    "trans"=>"--g"
+                ] /* end grasas */,
+                "proteinas"=>[
+                   "proteinas"=>"4g",
+                   "sodio"=>"85mg",
+                   "potasio"=>"--mg",
+                   "colesterol"=>"30mg"
+                ] /*end proteinas */,
+                "vitaminas"=>[
+                    "vitamina_a"=>"--%",
+                    "vitamina_c"=>"--%",
+                    "calcio"=>"4%",
+                    "hierro"=>"8%"
+                ] /*end vitaminas */
+                                    ]
 
-<div ng-view></div>
+                ], /* end descripcion*/
+                "lote"=>[
+                    "id_lote"=>"0-8737-993",
+                    "vencimiento"=>"12-08-2019",
+                    "enbase"=>"12-01-2019"    
 
-<script>
-var app = angular.module("RouteBryan", ["ngRoute"]);
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "inicio.htm"
-    })
-    .when("/red", {
-        templateUrl : "rojo.htm"
-    })
-    .when("/green", {
-        templateUrl : "verde.htm"
-    })
-    .when("/blue", {
-        templateUrl : "azul.htm"
-    });
-});
-</script>
+                ],/* end lote */
+                "dimensiones"=>[
+                    "ancho"=>"7",
+                    "alto"=>"15",
+                    "peso"=>"50g"
+                ], /*end dimensiones */
+                "textos"=>[
+                    "1"=>"Los porcentajes están basados en una dieta de 2000 calorías al día."
+                ]
+    ] /* end chocoramo */
 
-<p>Cargando...</p>
-    </body>
+);
+
+
+
+?>
+
+</body>
 </html>
